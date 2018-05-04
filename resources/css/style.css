@@ -15,6 +15,8 @@ h1 {
   font-family: "Righteous", cursive;
   font-size: 2.5rem;
   color: rgb(255, 0, 171);
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .container-fluid {
@@ -22,4 +24,9 @@ h1 {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
 }
