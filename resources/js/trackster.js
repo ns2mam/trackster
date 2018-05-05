@@ -11,14 +11,6 @@ $("#search-button").click(function() {
 
 const API_KEY = "1d1f6112df559817f5b57b4a5f8a6356";
 
-$.ajax({
-  url: ("http://ws.audioscrobbler.com/2.0/?method=track.search&track=monkey&api_key=1d1f6112df559817f5b57b4a5f8a6356&format=json"),
-  dataType: "jsonp",
-  success: function(data) {
-    console.log(data)
-  }
-});
-
 Trackster.renderTracks = function(tracks) {
 
 };
@@ -28,6 +20,12 @@ Trackster.renderTracks = function(tracks) {
   Render the tracks given in the API query response.
 */
 Trackster.searchTracksByTitle = function(title) {
-
+  $.ajax({
+    url: ("http://ws.audioscrobbler.com/2.0/?method=track.search&track="+title+"&api_key="+API_KEY+"&format=json"),
+    dataType: "jsonp",
+    success: function(data) {
+      console.log(data)
+    }
+  });
 };
 });
