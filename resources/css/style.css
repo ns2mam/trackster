@@ -70,3 +70,8 @@ i {
   display: flex;
   align-items: center;
 }
+
+.fa {
+  background-color: transparent;
+  color: rgb(255, 0, 171);
+}
