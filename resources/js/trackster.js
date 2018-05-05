@@ -8,6 +8,17 @@ $("#search-button").click(function() {
   Append each "row" to the container in the body to display all tracks.
 */
 });
+
+const API_KEY = "1d1f6112df559817f5b57b4a5f8a6356";
+
+$.ajax({
+  url: ("http://ws.audioscrobbler.com/2.0/?method=track.search&track=monkey&api_key=1d1f6112df559817f5b57b4a5f8a6356&format=json"),
+  dataType: "jsonp",
+  success: function(data) {
+    console.log(data)
+  }
+});
+
 Trackster.renderTracks = function(tracks) {
 
 };
