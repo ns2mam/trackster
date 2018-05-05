@@ -49,8 +49,24 @@ i {
 .properties {
   background-color: rgb(104, 0, 255);
   color: rgb(255, 255, 255);
-  text-align: center;
   font-family: "Work Sans";
   font-size: 1rem;
   font-weight: 500;
+  line-height: 1.4;
+  padding: 0.3rem 0;
+}
+
+.song {
+  display: flex;
+  color: rgb(74, 74, 74);
+  font-family: "Work Sans";
+  font-size: 1rem;
+  line-height: 1.2;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.song div {
+  display: flex;
+  align-items: center;
 }
