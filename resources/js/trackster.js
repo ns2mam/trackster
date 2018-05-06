@@ -17,7 +17,9 @@ Trackster.renderTracks = function(tracks) {
   $songList.empty();
 
   for (var songIndex = 0; songIndex < tracks.length; songIndex++) {
+    var songNumber = songIndex + 1;
     var thisSong = tracks[songIndex];
+    var mediumAlbumArt = thisSong.image[1]["#text"];
     var songRowHtml =
       '<div class="row song">'+
         '<div class="col-xs-1 col-xs-offset-1 play-button">'+
@@ -25,16 +27,12 @@ Trackster.renderTracks = function(tracks) {
             '<i class="fa fa-play-circle-o fa-2x"></i>'+
           '</a>'+
         '</div>'+
-        '<div class="col-xs-1">'+ thisSong.number +'</div>'+
+        '<div class="col-xs-1">'+ songNumber +'</div>'+
         '<div class="col-xs-3">'+ thisSong.name +'</div>'+
         '<div class="col-xs-2">'+ thisSong.artist +'</div>'+
-        '<div class="col-xs-2">'+ thisSong.album +'</div>'+
+        '<div class="col-xs-2"><img src="'+ mediumAlbumArt +'"></div>'+
         '<div class="col-xs-1">'+ thisSong.listeners +'</div>'+
-        '<div class="col-xs-1">'+ thisSong.length +'</div>'+
       '</div>';
-
-      var mediumAlbumArt = track.image[1]["#text"];
-      songRowHtml.append(mediumAlbumArt);
 
     console.log(thisSong);
     $songList.append(songRowHtml);
@@ -49,8 +47,8 @@ Trackster.searchTracksByTitle = function(title) {
   $.ajax({
     url: ("http://ws.audioscrobbler.com/2.0/?method=track.search&track="+title+"&api_key="+API_KEY+"&format=json"),
     dataType: "jsonp",
-    success: function(data) {
-      console.log(data)
+    success: function(response) {
+      Trackster.renderTracks(response.results.trackmatches.track);
     }
   });
 };
