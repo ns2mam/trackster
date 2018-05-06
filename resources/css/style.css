@@ -71,7 +71,7 @@ i {
   align-items: center;
 }
 
-.fa {
+.play-button .fa {
   background-color: transparent;
   color: rgb(255, 0, 171);
 }

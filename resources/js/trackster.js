@@ -19,20 +19,24 @@ Trackster.renderTracks = function(tracks) {
   for (var songIndex = 0; songIndex < tracks.length; songIndex++) {
     var thisSong = tracks[songIndex];
     var songRowHtml =
-      "<div class="row song">"+
-        "<div class="col-xs-1 col-xs-offset-1 play-button">"+
-          "<a href='https://youtu.be/eI_O5_tJ1hA' target="_blank">"+
-            "<i class="fa fa-play-circle-o fa-2x"></i>"+
-          "</a>"+
-        "</div>"+
-        "<div class="col-xs-1">2</div>"+
-        "<div class="col-xs-3">She's So Groovy</div>"+
-        "<div class="col-xs-2">The Funky Monkeys</div>"+
-        "<div class="col-xs-2">Primate Life</div>"+
-        "<div class="col-xs-1">724563</div>"+
-        "<div class="col-xs-1">3:15</div>"+
-      "</div>";
+      '<div class="row song">'+
+        '<div class="col-xs-1 col-xs-offset-1 play-button">'+
+          '<a href='+ thisSong.url +'target="_blank">'+
+            '<i class="fa fa-play-circle-o fa-2x"></i>'+
+          '</a>'+
+        '</div>'+
+        '<div class="col-xs-1">'+ thisSong.number +'</div>'+
+        '<div class="col-xs-3">'+ thisSong.name +'</div>'+
+        '<div class="col-xs-2">'+ thisSong.artist +'</div>'+
+        '<div class="col-xs-2">'+ thisSong.album +'</div>'+
+        '<div class="col-xs-1">'+ thisSong.listeners +'</div>'+
+        '<div class="col-xs-1">'+ thisSong.length +'</div>'+
+      '</div>';
 
+      var mediumAlbumArt = track.image[1]["#text"];
+      songRowHtml.append(mediumAlbumArt);
+
+    console.log(thisSong);
     $songList.append(songRowHtml);
   }
 };
