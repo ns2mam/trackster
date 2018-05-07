@@ -76,3 +76,7 @@ input:focus {
   background-color: transparent;
   color: rgb(255, 0, 171);
 }
+
+.play-button .fa:hover {
+  color: rgb(255, 102, 204);
+}
