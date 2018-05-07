@@ -38,6 +38,10 @@ input {
   border-radius: 15px;
 }
 
+input:focus {
+  color: rgb(74, 74, 74);
+}
+
 #search-button {
   background-color: rgb(255, 102, 204);
   color: rgb(35, 2, 63);
